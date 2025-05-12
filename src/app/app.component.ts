@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppClassDirective } from './directives/app-class.directive';
+import { NumericComponent } from "./numeric/numeric.component";
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, AppClassDirective],
+  imports: [CommonModule, AppClassDirective, NumericComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   @HostListener('mouseenter') onMouseEnter() {
