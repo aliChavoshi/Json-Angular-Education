@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NumericDirective } from '../directives/numeric.directive';
+import { AppClassDirective } from '../directives/app-class.directive';
 
 @Component({
   selector: 'app-numeric',
-  imports: [NumericDirective],
+  imports: [AppClassDirective],
   templateUrl: './numeric.component.html',
   styleUrl: './numeric.component.css',
   standalone: true,

@@ -3,6 +3,7 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
+  Input,
   OnInit,
   Renderer2,
 } from '@angular/core';
@@ -12,28 +13,11 @@ import {
   standalone: true,
 })
 export class AppClassDirective implements OnInit {
-  constructor(private element: ElementRef, private renderer: Renderer2) {
-    // this.element.nativeElement.style.backgroundColor = 'red';
+  @Input('appAppClass') set backgroundColor(color: string) {
+    this.element.nativeElement.style.backgroundColor = color;
   }
-  @HostBinding('style.backgroundColor') backgroundColor = 'red';
-  @HostListener('mouseleave',['$event']) OnMouseOver(eventData: Event) {
-    console.log(
-      '🚀 ~ AppClassDirective ~ @HostListener ~ eventData:',
-      eventData
-    ); //undefined
-    this.backgroundColor = 'blue';
 
-    // this.renderer.setStyle(
-    //   this.element.nativeElement,
-    //   'background-color',
-    //   'red'
-    // );
-  }
-  ngOnInit(): void {
-    // this.renderer.setStyle(
-    //   this.element.nativeElement,
-    //   'backgroundColor',
-    //   'blue'
-    // );
-  }
+  constructor(private element: ElementRef, private renderer: Renderer2) {}
+
+  ngOnInit(): void {}
 }

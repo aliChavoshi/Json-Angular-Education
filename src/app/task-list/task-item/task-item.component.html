@@ -1,0 +1,7 @@
+<div [appPriorityColor]="task.priority" class="alert alert-dark">
+  {{task.title}} - {{task.priority | priority}}
+  <button class="btn btn-warning" (click)="onSelectedTask()">Edit</button>
+  @if(task.done){
+  }
+</div>
+<!-- <span class="tag is-primary">done</span> -->

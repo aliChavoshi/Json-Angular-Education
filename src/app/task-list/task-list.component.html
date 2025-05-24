@@ -1,0 +1,12 @@
+@if(tasks.length>0){
+<div class="row p-3 m-3">
+  @for (item of tasks; track $index) {
+  <app-task-item (taskSelected)="taskSelected($event)" [task]="item"></app-task-item>
+  }
+</div>
+@if(isEdit){
+<app-edit-task [task]="editTask"></app-edit-task>
+}
+}@else {
+<div>داده ای وجود ندارد</div>
+}
