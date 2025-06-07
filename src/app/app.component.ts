@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, Pipe } from '@angular/core';
-import { StuduntComponent } from './studunt/studunt.component';
-import { NumericComponent } from './numeric/numeric.component';
-import { PriorityPipe } from './pipes/priority.pipe';
-import { TaskListComponent } from './task-list/task-list.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './common/Header/Header.component';
+import { FooterComponent } from './common/Footer/Footer.component';
+import { routes } from './app.routes';
+import { ElementsComponent } from "./elements/elements.component";
+import { CollectionsComponent } from "./collections/collections.component";
+import { UsersComponent } from "./users/users.component";
 
 export interface Student {
   id: number;
@@ -17,7 +19,16 @@ export interface Student {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    HeaderComponent,
+    FooterComponent,
+    RouterModule,
+    ElementsComponent,
+    CollectionsComponent,
+    UsersComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

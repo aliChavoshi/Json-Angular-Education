@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<!-- <div class="ui container">
+  <div class="ui secondary pointing menu">
+    <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="item">Home</a>
+    <a [routerLink]="['/elements']" routerLinkActive="active" class="item">Elements</a>
+    <a [routerLink]="['/collections']" routerLinkActive="active" class="item">Collections</a>
+  </div>
+  <div class="ui segment">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+<div>
+  <app-Header></app-Header>
+</div>
+<app-elements></app-elements>
+<app-collections></app-collections>
+@defer(){
+<app-users></app-users>
+}
+@placeholder(minimum 3s) {
+<p>loading users ...</p>
+}
+@defer(){
+<app-Footer></app-Footer>
+}

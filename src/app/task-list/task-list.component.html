@@ -1,9 +1,12 @@
 @if(tasks.length>0){
 <div class="row p-3 m-3">
-  @for (item of tasks; track $index) {
-  <app-task-item (taskSelected)="taskSelected($event)" [task]="item"></app-task-item>
-  }
+  <ng-container *ngFor="let item of tasks">
+    <app-task-item (taskSelected)="taskSelected($event)" [task]="item"></app-task-item>
+  </ng-container>
 </div>
+<ul *appPermission="['agent']">
+  <li *appAppTimes="5;let i = index;let name=name">Hello World {{i}} {{name}}</li>
+</ul>
 @if(isEdit){
 <app-edit-task [task]="editTask"></app-edit-task>
 }

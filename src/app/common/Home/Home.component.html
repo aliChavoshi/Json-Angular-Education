@@ -1,0 +1,11 @@
+<a (click)="goToStudent()">Student</a>
+<br>
+<a [routerLink]="['/tasks']" [queryParams]="{allowEdit : 1}" [fragment]="'loading'">Tasks</a>
+<br>
+<a [routerLink]="['/users']">Users</a>
+<br>
+<a [routerLink]="['/users',id]">Edit User</a>
+<br>
+<a [routerLink]="['/users','new']">New User</a>
+<br>
+<a [routerLink]="['/users/new']">New User</a>

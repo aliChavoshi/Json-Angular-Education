@@ -1,6 +1,8 @@
 <div [appPriorityColor]="task.priority" class="alert alert-dark">
+  <!-- Task.done == true => btn-danger -->
   {{task.title}} - {{task.priority | priority}}
-  <button class="btn btn-warning" (click)="onSelectedTask()">Edit</button>
+  <button [ngStyle]="{'backgroundColor': getColor()}" class="btn btn-warning"  [appMyClass]="{'btn-danger' : task.done}"
+    (click)="onSelectedTask()">Edit</button>
   @if(task.done){
   }
 </div>

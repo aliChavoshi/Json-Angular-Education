@@ -2,11 +2,20 @@ import { Component } from '@angular/core';
 import { Task } from '../models/task';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { CommonModule } from '@angular/common';
+import { AppTimesDirective } from '../directives/AppTimes.directive';
+import { PermissionDirective } from '../directives/permission.directive';
 
 //SOLID
 @Component({
   selector: 'app-task-list',
-  imports: [TaskItemComponent, EditTaskComponent],
+  imports: [
+    TaskItemComponent,
+    EditTaskComponent,
+    CommonModule,
+    AppTimesDirective,
+    PermissionDirective,
+  ],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css',
 })
